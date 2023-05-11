@@ -1,0 +1,23 @@
+michaelng@mich-sci devOpsDocker % docker run -dit ubuntu bash
+34bb520398310a1657c5a9a4ea4970372a8a1e8314d1063153f454f1ae14cb2b
+michaelng@mich-sci devOpsDocker % docker run -d nginx
+e382884bafb49d08ec96568b797f0a32e25e1a005269782577a1eb73651862e3
+michaelng@mich-sci devOpsDocker % docker run -dit node:19
+89bd18c384ee3c8dfde74f8961e0939af68528f44367013c613e1eb47add314c
+michaelng@mich-sci devOpsDocker % docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS     NAMES
+89bd18c384ee   node:19   "docker-entrypoint.s…"   7 seconds ago    Up 6 seconds              clever_goldberg
+e382884bafb4   nginx     "/docker-entrypoint.…"   15 seconds ago   Up 14 seconds   80/tcp    gracious_archimedes
+34bb52039831   ubuntu    "bash"                   33 seconds ago   Up 32 seconds             elegant_shannon
+michaelng@mich-sci devOpsDocker % docker stop clever_goldberg
+clever_goldberg
+michaelng@mich-sci devOpsDocker % docker kill gracious_archimedes
+gracious_archimedes
+michaelng@mich-sci devOpsDocker % docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED              STATUS              PORTS     NAMES
+34bb52039831   ubuntu    "bash"    About a minute ago   Up About a minute             elegant_shannon
+michaelng@mich-sci devOpsDocker % docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS                        PORTS     NAMES
+89bd18c384ee   node:19   "docker-entrypoint.s…"   About a minute ago   Exited (137) 34 seconds ago             clever_goldberg
+e382884bafb4   nginx     "/docker-entrypoint.…"   About a minute ago   Exited (137) 14 seconds ago             gracious_archimedes
+34bb52039831   ubuntu    "bash"                   About a minute ago   Up About a minute                       elegant_shannon
