@@ -1,0 +1,19 @@
+michaelng@mich-sci devOpsDocker % docker run -d --name webapp devopsdockeruh/simple-web-service:ubuntu
+89013d80715fca116be99b8af5077fd250be96af9e5fea6a5ec6a7a4ad74863a
+michaelng@mich-sci devOpsDocker % docker exec -it webapp tail -f ./text.log
+2023-05-11 12:15:06 +0000 UTC
+2023-05-11 12:15:08 +0000 UTC
+2023-05-11 12:15:10 +0000 UTC
+2023-05-11 12:15:12 +0000 UTC
+2023-05-11 12:15:14 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-05-11 12:15:16 +0000 UTC
+2023-05-11 12:15:18 +0000 UTC
+2023-05-11 12:15:20 +0000 UTC
+2023-05-11 12:15:22 +0000 UTC
+2023-05-11 12:15:24 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-05-11 12:15:26 +0000 UTC
+2023-05-11 12:15:28 +0000 UTC
+2023-05-11 12:15:30 +0000 UTC
+2023-05-11 12:15:32 +0000 UTC
