@@ -1,0 +1,46 @@
+michaelng@mich-sci example-frontend % cd ../example-backend
+michaelng@mich-sci example-backend % docker build -t devopsdocker/example-backen
+d .
+[+] Building 105.9s (10/10) FINISHED
+ => [internal] load build definition from Dockerfile                       0.1s
+ => => transferring dockerfile: 169B                                       0.0s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 111B                                          0.0s
+ => [internal] load metadata for docker.io/library/golang:1.20-alpine      4.4s
+ => [auth] library/golang:pull token for registry-1.docker.io              0.0s
+ => [1/4] FROM docker.io/library/golang:1.20-alpine@sha256:ee2f23f1a612d  24.4s
+ => => resolve docker.io/library/golang:1.20-alpine@sha256:ee2f23f1a612da  0.0s
+ => => sha256:0a03b591c358a0bb02e39b93c30e955358dadd18dc5 1.16kB / 1.16kB  0.0s
+ => => sha256:98045bb148f1a5be15cdccc3c15f9c377a5eef737fc 5.11kB / 5.11kB  0.0s
+ => => sha256:58116d8bf56953e5f30b7f50257c5bb2b5ba4ab 284.69kB / 284.69kB  0.4s
+ => => sha256:00664777e466f6e514b4234fa4469f2ab6a5ff5 100.88MB / 100.88MB  6.2s
+ => => sha256:2f4ab7ae68c01966b86cdd51607b26641445bc9985874e0 157B / 157B  1.2s
+ => => sha256:ee2f23f1a612da71b8a4cd78fec827f1e67b0a8546a 1.65kB / 1.65kB  0.0s
+ => => extracting sha256:58116d8bf56953e5f30b7f50257c5bb2b5ba4aba460cb69f  0.2s
+ => => extracting sha256:00664777e466f6e514b4234fa4469f2ab6a5ff56e1a61db  16.6s
+ => => extracting sha256:2f4ab7ae68c01966b86cdd51607b26641445bc9985874e0a  0.0s
+ => [internal] load build context                                          0.1s
+ => => transferring context: 28.90kB                                       0.0s
+ => [2/4] WORKDIR /usr/src/app                                             0.5s
+ => [3/4] COPY . .                                                         0.1s
+ => [4/4] RUN go build                                                    70.0s
+ => exporting to image                                                     6.2s
+ => => exporting layers                                                    6.2s
+ => => writing image sha256:8007fda86a19bf4fbc4065730e276d5eb50b2ba95a031  0.0s
+ => => naming to docker.io/devopsdocker/example-backend                    0.0s
+michaelng@mich-sci example-backend % docker run -p 8080:8080 devopsdocker/exampl
+e-backend
+[Ex 2.4+] REDIS_HOST env was not passed so redis connection is not initialized
+[Ex 2.6+] POSTGRES_HOST env was not passed so postgres connection is not initialized
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /ping                     --> server/router.pingpong (4 handlers)
+[GIN-debug] GET    /messages                 --> server/controller.GetMessages (4 handlers)
+[GIN-debug] POST   /messages                 --> server/controller.CreateMessage (4 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2023/05/15 - 11:04:25 | 404 |     683.581µs |      172.17.0.1 | GET      "/"
+[GIN] 2023/05/15 - 11:04:28 | 200 |      47.671µs |      172.17.0.1 | GET      "/ping"
