@@ -1,0 +1,2 @@
+michaelng@mich-sci part1 % docker run -v "$(pwd)/web_data:/usr/src/app/text.log"
+ devopsdockeruh/simple-web-service:alpine
