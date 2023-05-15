@@ -1,0 +1,38 @@
+michaelng@mich-sci part1 % docker run fd312adc88e0 hello
+
+
+		The application accepts 1 argument "server". Use the argument server to run the server
+
+		If no arguments are supplied the application will output log strings to a file.
+
+
+Arguments given: hello
+michaelng@mich-sci part1 % docker build -t devopsdocker/web-server -f 1_8.Docker
+file
+"docker build" requires exactly 1 argument.
+See 'docker build --help'.
+
+Usage:  docker build [OPTIONS] PATH | URL | -
+
+Build an image from a Dockerfile
+michaelng@mich-sci part1 % docker build -t devopsdocker/web-server -f 1_8.Dockerfile .
+[+] Building 0.5s (5/5) FINISHED
+ => [internal] load build definition from 1_8.Dockerfile                   0.1s
+ => => transferring dockerfile: 107B                                       0.0s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [internal] load metadata for docker.io/devopsdockeruh/simple-web-serv  0.0s
+ => [1/1] FROM docker.io/devopsdockeruh/simple-web-service:alpine          0.2s
+ => exporting to image                                                     0.0s
+ => => exporting layers                                                    0.0s
+ => => writing image sha256:7a1932bcdd702eeecddf6b2b507fc98a660175298699c  0.0s
+ => => naming to docker.io/devopsdocker/web-server                         0.0s
+michaelng@mich-sci part1 % docker run devopsdocker/web-server
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /*path                    --> server.Start.func1 (3 handlers)
+[GIN-debug] Listening and serving HTTP on :8080
