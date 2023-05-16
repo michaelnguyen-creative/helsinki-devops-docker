@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  example-frontend:
+    image: devopsdocker/example-frontend
+    build:
+      context: ~/Data/devOpsDocker/material-applications/example-frontend
+      dockerfile: ./Dockerfile
+    container_name: devopsdocker_example_frontend
+    ports:
+      - '4000:4000'
+  example-backend:
+    image: devopsdocker/example-backend
+    build:
+      context: ~/Data/devOpsDocker/material-applications/example-backend
+      dockerfile: ./Dockerfile
+    container_name: devopsdocker_example_backend
+    ports:
+      - '8080:8080'
+    environment:
+      - REQUEST_ORIGIN=http://localhost:4000
+      - REDIS_HOST=redisdb
+      - POSTGRES_HOST=postgresdb
+      - POSTGRES_PASSWORD=secret
+    depends_on:
+      - redisdb
+  redisdb:
+    image: redis:7-alpine
+    volumes:
+      - ./redis_data:/data
+    restart: unless-stopped
+  postgresdb:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=secret
+    volumes:
+      - ./database:/var/lib/postgresql/data
+  debugger:
+    image: busybox
