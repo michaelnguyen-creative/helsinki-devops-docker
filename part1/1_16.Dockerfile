@@ -4,7 +4,7 @@ COPY package*.json .
 
 FROM base AS frontend-build
 RUN npm i
-COPY webpack* babel* .
+COPY webpack* babel* ./
 COPY ./client ./client
 RUN npm run build
 
