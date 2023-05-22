@@ -1,0 +1,3 @@
+Link to exercise3_2 app with github action configs:
+
+https://github.com/michaelnguyen-creative/full-stack-open-phonebook
