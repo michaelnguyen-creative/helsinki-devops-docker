@@ -1,5 +1,4 @@
-playground/
-material-applications/
 web_data/
 database/
 redis_data/
+.DS_Store
