@@ -2,3 +2,5 @@ web_data/
 database/
 redis_data/
 .DS_Store
+example-backend/
+example-frontend/
