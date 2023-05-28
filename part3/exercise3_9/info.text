@@ -1,0 +1,5 @@
+Container image size: ~18.6MB
+
+michaelng@mich-sci exercise3_9 % docker images
+REPOSITORY                                                  TAG           IMAGE ID       CREATED             SIZE
+devopsdocker/back-39                                        latest        8b876bc41db0   7 minutes ago       18.6MB

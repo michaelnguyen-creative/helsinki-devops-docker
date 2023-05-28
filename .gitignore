@@ -4,3 +4,4 @@ redis_data/
 .DS_Store
 example-backend/
 example-frontend/
+rails-example-project/
